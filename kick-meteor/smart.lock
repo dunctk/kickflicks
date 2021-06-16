@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "mongodb-server-aggregation": {}
+    },
+    "packages": {
+      "mongodb-server-aggregation": {
+        "git": "https://github.com/zvictor/meteor-mongo-server.git",
+        "tag": "v1.0.3",
+        "commit": "416293e383f53e2506f1b7a1a7687390cbaf0e68"
+      }
+    }
+  }
+}

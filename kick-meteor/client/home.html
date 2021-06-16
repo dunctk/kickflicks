@@ -1,0 +1,140 @@
+<template name="home">
+    
+	{{> nav}}
+
+    <!-- Page Header -->
+    <div class="row header">
+    	<div class="container">
+            <div class="col-lg-12">
+                <h1 class="page-title">A gallery of the top Kickstarter product pitch videos</h1>
+                <h2 class="page-subtitle">Browse and watch the videos that helped these design & tech projects beat their goals by 4x or more.</h2>
+
+                <div class="row">
+                	<div class="col-md-6 col-md-offset-3">
+		                <div class="searchbox">
+		                	<div class="input-group">
+								<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+								{{> EasySearch.Input index=projectsIndex attributes=searchBoxAttributes}}
+							</div>
+		                </div>
+	                	<div class="filters">
+	                		<a href="#" class="btn btn-default"  data-value="Product Design">Product Design</a>
+	                		<a href="#" class="btn btn-default"  data-value="Hardware">Hardware</a>
+	                		<a href="#" class="btn btn-default"  data-value="Gadgets">Gadgets</a>
+	                		<!--<a href="#" class="btn btn-default"  data-value="3D Priniting">3D Priniting</a>
+	                		<a href="#" class="btn btn-default"  data-value="Apps">Apps</a>
+	                		<a href="#" class="btn btn-default"  data-value="Software">Software</a>
+	                		<a href="#" class="btn btn-default"  data-value="Wearables">Wearables</a>-->
+	                	</div>
+                	</div>
+                </div>
+            </div>
+    	</div>
+    </div>
+    <!-- /.row -->
+
+   <div class="container">
+        <!-- Projects Row -->
+        <div class="row">
+        	{{#EasySearch.Each index=projectsIndex }}
+           
+            <div class="col-md-6 project-item" >
+                    <video class="has_webm landscape" preload="none" style="display: inline;" controls poster="{{image}}">
+                    	<source src="{{video}}" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;">
+                    </video>
+          			
+                <h3>
+                    <a href="{{pageUrl}}" target="_blank"> {{name}}</a>
+                </h3>
+                <p>{{shortDesc}}</p>
+
+                <div class="project-stats">
+                	<p><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{subcategory}}</p>
+	                <div class="pledgebar">
+	                	<div class="pledgebar-goal" style="width:{{inverseFundPercent}}%">          
+	                	</div>
+	                </div>
+	                <div class="project-stats-item"><strong>${{fundGoal}}</strong> goal</div>
+	                <div class="project-stats-item"><strong>{{fundPercent}}%</strong> funded</div>
+                	<div class="project-stats-item"><strong>${{fundReached}}</strong> pledged</div>
+	            </div>
+
+            </div>
+        	{{/EasySearch.Each}}
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                {{> EasySearch.Pagination index=projectsIndex maxPages=10}}
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    	</div>
+    	<!-- /.container -->
+
+    	<div class="email-subscribe">
+    		<div class="container">
+    			<div class="col-md-12">
+    				<h3 class="email-subscribe-header">Get a weekly email with the latest top pitch videos</h3>
+    				<!-- Begin MailChimp Signup Form -->
+					<div id="mc_embed_signup">
+					<form action="//wildness.us11.list-manage.com/subscribe/post?u=dc956e889afc7ac9c28a85343&amp;id=abb93cdd34" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<div id="mc_embed_signup_scroll">
+					<div class="input-group">	
+					<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="col-xs-6">
+							<div class="mc-field-group">
+								<input type="text" value="" placeholder="Your name" name="FNAME" class="required form-control" id="mce-FNAME">
+							</div>
+						</div>
+
+						<div class="col-xs-6">
+							<div class="mc-field-group">
+								<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="email@example.com">
+							</div>
+						</div>
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>
+					</div>
+					</div>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_dc956e889afc7ac9c28a85343_abb93cdd34" tabindex="-1" value=""></div>
+					<div class="row">
+					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success btn-lg">
+					</div>
+					</div>
+					</div>
+					</form>
+					</div>
+
+					<!--End mc_embed_signup-->
+    			</div>
+    		</div>
+    	</div>
+
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+	            <div class="row">
+	                <div class="col-lg-12">
+	                	<p>KickFlicks is not affiliated with Kickstarter.com.</p>
+	                </div>
+	            </div>
+	            <!-- /.row -->
+        	</div>
+        </footer>
+
+   
+
+
+</template>

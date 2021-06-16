@@ -1,0 +1,12 @@
+setup.py
+kick/__init__.py
+kick/items.py
+kick/pipelines.py
+kick/settings.py
+kick/spiders/__init__.py
+kick/spiders/kickstarter_spider.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
